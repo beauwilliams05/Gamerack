@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameRack | Add / Edit Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- navigation bar -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="games.html">My Games</a></li>
+            <li><a href="game_form.html">Add Game</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+        <h1>Add / Edit Game</h1>
+
+        <!-- form for additing/editing game list elements (link to PHP later) -->
+        <form class="form-box" id="gameForm" action="save_game.php" method="post">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Game title" required>
+
+            <label for="platform">Platform</label>
+            <select id="platform" name="platform" required>
+                <option value="PC">PC</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Switch">Switch</option>
+            </select>
+
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" name="genre" placeholder="e.g. RPG" required>
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="Unplayed">Unplayed</option>
+                <option value="Playing">Playing</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <label for="hours">Hours Played</label>
+            <input type="number" id="hours" name="hours" placeholder="0" min="0" required>
+
+            <button type="submit">Save Game</button>
+        </form>
+
+        <p><a href="games.html">Cancel</a></p>
+    </main>
+
+</body>
+</html>
