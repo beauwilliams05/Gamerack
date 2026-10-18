@@ -1,0 +1,54 @@
+<!-- clean this up later, seperate forms into separate files and have seperate buttons for each-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameRack | Account</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- navigation bar -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="games.html">My Games</a></li>
+            <li><a href="game_form.html">Add Game</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+
+        <!-- login form -->
+        <h1>Login</h1>
+        <form class="form-box" action="login.php" method="post">
+            <label for="login_username">Username</label>
+            <input type="text" id="login_username" name="username" placeholder="Your username" required>
+
+            <label for="login_password">Password</label>
+            <input type="password" id="login_password" name="password" placeholder="Your password" required>
+
+            <button type="submit">Log In</button>
+        </form>
+
+        <!-- register form -->
+        <h2>New here? Create an account</h2>
+        <form class="form-box" action="register.php" method="post" onsubmit="return validateRegister()">
+            <label for="reg_username">Username</label>
+            <input type="text" id="reg_username" name="username" placeholder="Choose a username" required>
+
+            <label for="reg_password">Password (8+ characters)</label>
+            <input type="password" id="reg_password" name="password" placeholder="Choose a password" pattern=".{8,}" required>
+
+            <label for="reg_confirm">Confirm Password</label>
+            <input type="password" id="reg_confirm" name="confirm" placeholder="Type it again" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+    </main>
+
+</body>
+</html>
