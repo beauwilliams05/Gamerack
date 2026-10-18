@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameRack | My Games</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- navigation bar links -->
+    <nav class="main-nav">
+        <ul>
+            <li><a href="games.html">My Games</a></li>
+            <li><a href="game_form.html">Add Game</a></li>
+            <li><a href="account.html">Account</a></li>
+        </ul>
+    </nav>
+
+    <main class="page">
+        <h1>My Games</h1>
+
+        <!-- Filter bar -->
+        <form class="filter-bar" id="filterForm" method="get" action="games.html">
+            <label for="filterStatus">Status</label>
+            <select id="filterStatus" name="status">
+                <option value="">All</option>
+                <option value="Unplayed">Unplayed</option>
+                <option value="Playing">Playing</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <label for="filterPlatform">Platform</label>
+            <select id="filterPlatform" name="platform">
+                <option value="">All</option>
+                <option value="PC">PC</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Xbox">Xbox</option>
+                <option value="Switch">Switch</option>
+            </select>
+
+            <label for="filterGenre">Genre</label>
+            <input type="text" id="filterGenre" name="genre" placeholder="e.g. RPG">
+
+            <button type="button" onclick="filterGames()">Filter</button>
+        </form>
+
+        <!-- sample game list (replace after implementing PHP and database) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+        <table border="1" id="gameTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Platform</th>
+                    <th>Genre</th>
+                    <th>Status</th>
+                    <th>Hours</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row1">
+                    <td>Elden Ring</td>
+                    <td id="platform1">PC</td>
+                    <td id="genre1">RPG</td>
+                    <td id="status1">Playing</td>
+                    <td>42</td>
+                    <td>
+                        <a href="game_form.html">Edit</a>
+                        <button type="button" onclick="markCompleted(1)">Mark Completed</button>
+                        <button type="button" onclick="deleteGame(1)">Delete</button>
+                    </td>
+                </tr>
+                <tr id="row2">
+                    <td>Hades</td>
+                    <td id="platform2">Switch</td>
+                    <td id="genre2">Roguelike</td>
+                    <td id="status2">Completed</td>
+                    <td>31</td>
+                    <td>
+                        <a href="game_form.html">Edit</a>
+                        <button type="button" onclick="markCompleted(2)">Mark Completed</button>
+                        <button type="button" onclick="deleteGame(2)">Delete</button>
+                    </td>
+                </tr>
+                <tr id="row3">
+                    <td>Halo Infinite</td>
+                    <td id="platform3">Xbox</td>
+                    <td id="genre3">Shooter</td>
+                    <td id="status3">Unplayed</td>
+                    <td>0</td>
+                    <td>
+                        <a href="game_form.html">Edit</a>
+                        <button type="button" onclick="markCompleted(3)">Mark Completed</button>
+                        <button type="button" onclick="deleteGame(3)">Delete</button>
+                    </td>
+                </tr>
+                <tr id="row4">
+                    <td>God of War</td>
+                    <td id="platform4">PlayStation</td>
+                    <td id="genre4">Action</td>
+                    <td id="status4">Unplayed</td>
+                    <td>3</td>
+                    <td>
+                        <a href="game_form.html">Edit</a>
+                        <button type="button" onclick="markCompleted(4)">Mark Completed</button>
+                        <button type="button" onclick="deleteGame(4)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><a href="game_form.html">+ Add a new game</a></p>
+    </main>
+
+</body>
+</html>
