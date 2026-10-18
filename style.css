@@ -1,0 +1,131 @@
+/* GameRack shared styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, "Times New Roman", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* navigation bar */
+.main-nav {
+    background-color: blue;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.main-nav li {
+    display: inline-block;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 1em 1.2em;
+    color: rgb(92, 168, 255);
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background-color: black;
+    color: blue;
+}
+
+/* webpage */
+.page {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em 0;
+}
+
+/*Headers*/
+h1, h2 {
+    color: blue;
+    margin-bottom: 0.75em;
+}
+
+/* forms */
+.form-box {
+    width: 70%;
+    margin: 1em auto;
+    padding: 1.5em;
+    border: 2px solid blue;
+}
+
+.form-box label {
+    display: block;
+    margin-bottom: 0.3em;
+    font-weight: bold;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 0.6em;
+    margin-bottom: 1em;
+    border: 1px solid #999;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+    border: 2px solid blue;
+}
+
+/* buttons */
+button {
+    background-color: blue;
+    color: rgb(92, 168, 255);
+    border: 2px solid blue;
+    padding: 0.7em 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    color: blue;
+}
+
+/* Game list table */
+table {
+    width: 100%;
+}
+
+/*table headers */
+th {
+    background-color: blue;
+    color: white;
+}
+
+/* table headers and data */
+th, td {
+    padding: 0.6em;
+    text-align: left;
+}
+
+/* filter bar */
+.filter-bar {
+    margin-bottom: 1.5em;
+}
+
+.filter-bar label {
+    margin-left: 0.8em;
+    margin-right: 0.3em;
+}
+
+.filter-bar select,
+.filter-bar input {
+    padding: 0.4em;
+}
+
+/* Links on dark background */
+a {
+    color: rgb(38, 139, 255);
+}
