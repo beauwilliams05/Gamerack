@@ -13,10 +13,9 @@ $genre = $_POST['genre'];
 $status = $_POST['status'];
 $hours = $_POST['hours'];
 
-// prepared statement: the ? marks get filled in safely (blocks SQL injection)
 $stmt = $conn->prepare("INSERT INTO games(title, platform, genre, status, hours) VALUES(?, ?, ?, ?, ?)");
 
-// s = string, i = integer (4 strings, then 1 integer)
+// 4 strings, 1 int
 $stmt->bind_param("ssssi", $title, $platform, $genre, $status, $hours);
 
 if($stmt->execute()){

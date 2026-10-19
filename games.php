@@ -9,15 +9,15 @@ if($conn->connect_error){
 // get every game from the table
 $results = $conn->query("SELECT * FROM games");
 
-// read the filter choices from the URL (blank if nothing was chosen)
+// read the filter choices from the filter input
 $status = isset($_GET['status']) ? $_GET['status'] : "";
 $platform = isset($_GET['platform']) ? $_GET['platform'] : "";
 $genre = isset($_GET['genre']) ? $_GET['genre'] : "";
 
-// % on both sides means "contains", so "rp" finds "RPG"
+// code for filter autofill (the % autofill so "ti" would showe "Action", but it also shows other genres that contain exactly "ti")
 $genreLike = "%" . $genre . "%";
 
-// a blank filter matches everything, otherwise it must match exactly
+// a blank filter matches everything, otherwise it must match
 $stmt = $conn->prepare("SELECT * FROM games WHERE (status = ? OR ? = '') AND (platform = ? OR ? = '') AND genre LIKE ?");
 $stmt->bind_param("sssss", $status, $status, $platform, $platform, $genreLike);
 $stmt->execute();
@@ -87,7 +87,7 @@ $results = $stmt->get_result();
             <tbody>
                 <?php
                 if($results->num_rows > 0){
-                    // one table row for every game in the database
+                    // builds one table row for every game in the database
                     while($row = $results->fetch_assoc()){
                         $id = $row['id'];
                         //htmlspecialchars() prevents names like "<script>..." from getting run as code (credit to VS code autofill and Google)

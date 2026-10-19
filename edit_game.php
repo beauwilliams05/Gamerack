@@ -5,10 +5,8 @@ if($conn->connect_error){
     echo "Failed to connect to DB" . $conn->connect_error;
 }
 
-// which game was clicked (comes from the link: edit_game.php?id=3)
 $id = $_GET['id'];
 
-// prepared statement, so the id can't be used for SQL injection
 $stmt = $conn->prepare("SELECT * FROM games WHERE id=?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
@@ -35,11 +33,10 @@ $row = $result->fetch_assoc();
         </ul>
     </nav>
 
+    <!-- lets you edit games and fills in edit sections with saved info -->
     <main class="page">
         <h1>Edit Game</h1>
-
         <form class="form-box" action="update_game.php" method="post">
-            <!-- hidden field so update_game.php knows which game this is -->
             <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
             <label for="title">Title</label>

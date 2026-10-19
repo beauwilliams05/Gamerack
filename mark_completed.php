@@ -5,7 +5,7 @@ if($conn->connect_error){
     echo "Failed to connect to DB" . $conn->connect_error;
 }
 
-// which game to mark (sent by the hidden field)
+// which game
 $id = $_POST['id'];
 
 $stmt = $conn->prepare("UPDATE games SET status='Completed' WHERE id=?");

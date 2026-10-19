@@ -5,10 +5,10 @@ if($conn->connect_error){
     echo "Failed to connect to DB" . $conn->connect_error;
 }
 
-// which game to delete (sent by the hidden field)
+// which game to delete
 $id = $_POST['id'];
 
-// prepared statement, same pattern as the other files
+
 $stmt = $conn->prepare("DELETE FROM games WHERE id=?");
 $stmt->bind_param("i", $id);
 
