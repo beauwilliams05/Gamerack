@@ -129,3 +129,8 @@ th, td {
 a {
     color: rgb(38, 139, 255);
 }
+
+/* for delete button to keep it inline with other buttons */
+.delete-button {
+    display: inline;
+}
